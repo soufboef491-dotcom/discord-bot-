@@ -1,4 +1,4 @@
-n# Boot message
+# Boot message
 print("Booting up...")
 
 import os
