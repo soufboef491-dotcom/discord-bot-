@@ -1,4 +1,4 @@
-# Boot message
+n# Boot message
 print("Booting up...")
 
 import os
@@ -84,7 +84,7 @@ class EmbedModal(Modal, title="Maak een Embed"):
                 color = discord.Color.default()
 
         embed = discord.Embed(title=self.titel.value, description=self.beschrijving.value, color=color)
-        embed.set_footer(text=f"Gemaakt door {interaction.user}")
+        embed.set_footer(text=f"Gemaakt door Modern & Trendy")
 
         guild = interaction.guild
         if guild is None:
