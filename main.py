@@ -32,18 +32,18 @@ GUILD_ID = 1408864372717260812
 # Moderation roles allowed
 
 ALLOWED_ROLES = {
-   1149718619207512119
+   1408866019975630889
 }
 
 UNBAN_ROLES = {
-    1149718619207512119
+    1408866019975630889
 }
 
 LOG_CHANNELS = {
-    "ban": 1150282902299484200,
-    "kick": 1150282902299484200,
-    "warn": 1150282902299484200,
-    "unban": 1150282902299484200,
+    "ban": 1409547661882687600,
+    "kick": 1409547735262302228,
+    "warn": 1409547856636940460,
+    "unban": 1409547914073870336,
 }
 
 # ------------------- Bot -------------------
@@ -110,7 +110,7 @@ class EmbedModal(Modal, title="Maak een Embed"):
 @bot.tree.command(name="embed", description="Maak een embed via formulier", guild=discord.Object(id=GUILD_ID))
 async def embed_cmd(interaction: discord.Interaction):
     allowed_roles = {
-        1149718619207512119
+        1408866019975630889
     }
     if not any(r.id in allowed_roles for r in interaction.user.roles):
         await interaction.response.send_message("❌ Je hebt geen toegang tot dit commando.", ephemeral=True)
@@ -250,7 +250,7 @@ class RoleEmbedModal(Modal, title="Maak een Role Embed"):
     guild=discord.Object(id=GUILD_ID)
 )
 async def roleembed(interaction: discord.Interaction):
-    allowed_roles = {1149718619207512119}
+    allowed_roles = {1408866019975630889}
     if not any(r.id in allowed_roles for r in interaction.user.roles):
         await interaction.response.send_message("❌ Je hebt geen toegang tot dit commando.", ephemeral=True)
         return
@@ -543,7 +543,7 @@ async def moderatie(interaction: discord.Interaction):
 
 # ✅ Rol-IDs die mogen
 ALLOWED_ROLES = {
-    1149718619207512119
+   1408866019975630889
 }
 
 def has_allowed_role(interaction: discord.Interaction) -> bool:
@@ -619,7 +619,7 @@ async def listbans(interaction: discord.Interaction, limit: int = 10):
 @app_commands.describe(amount="Aantal berichten om te verwijderen (of 'all')")
 async def clear(interaction: discord.Interaction, amount: str):
     ALLOWED_ROLES = {
-        1149718619207512119
+        1408866019975630889
     }
 
     # Check of de gebruiker een van de rollen heeft
@@ -654,9 +654,9 @@ async def clear(interaction: discord.Interaction, amount: str):
 
 # ------------------- Ticket Transcript -------------------
 
-TICKET_CATEGORY_ID = 1409228873438199989  # <-- pas dit aan naar je ticket categorie ID
-TICKET_STAFF_ROLES = {1149718619207512119}  # staff die toegang krijgt
-TICKET_LOG_CHANNEL_ID = 1150282902299484200  # <-- log kanaal ID (staff-only)
+TICKET_CATEGORY_ID = 1408868755592843558  # <-- pas dit aan naar je ticket categorie ID
+TICKET_STAFF_ROLES = {1408866019975630889}  # staff die toegang krijgt
+TICKET_LOG_CHANNEL_ID = 1409549193822867577  # <-- log kanaal ID (staff-only)
 
 # ------------------- Ticket Modal -------------------
 class TicketReasonModal(discord.ui.Modal, title="Ticket Reden en Info"):
@@ -732,15 +732,9 @@ class TicketReasonModal(discord.ui.Modal, title="Ticket Reden en Info"):
 class TicketDropdown(discord.ui.Select):
     def __init__(self):
         options = [
-            discord.SelectOption(label="Algemene Vragen", emoji="❓"),
-            discord.SelectOption(label="Klachten (Spelers)", emoji="👤"),
-            discord.SelectOption(label="Klachten (Staff)", emoji="🛑"),
-            discord.SelectOption(label="Ingame Refund", emoji="💰"),
-            discord.SelectOption(label="Unban Aanvraag (Discord)", emoji="💬"),
-            discord.SelectOption(label="Unban Aanvraag (TX-Admin)", emoji="🖥️"),
-            discord.SelectOption(label="Unban Aanvraag (Anticheat)", emoji="⚠️"),
-            discord.SelectOption(label="Staff Sollicitatie", emoji="📝"),
-            discord.SelectOption(label="Donaties", emoji="💎"),
+            discord.SelectOption(label="question", emoji="❓"),
+            discord.SelectOption(label="Purchase", emoji="💰"),
+            
         ]
         super().__init__(placeholder="📌 Kies een ticket type...", min_values=1, max_values=1, options=options)
 
