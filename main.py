@@ -161,9 +161,9 @@ class RoleEmbedModal(Modal, title="Maak een Role Embed"):
             embed.set_thumbnail(url=interaction.guild.icon.url)
 
         if interaction.guild.icon:
-            embed.set_footer(text=f"Gemaakt door {interaction.guild.name}", icon_url=interaction.guild.icon.url)
+            embed.set_footer(text=f"Gemaakt door Modern & Trendy", icon_url=interaction.guild.icon.url)
         else:
-            embed.set_footer(text=f"Gemaakt door {interaction.guild.name}")
+            embed.set_footer(text=f"Gemaakt door Modern & Trendy")
 
         # --- Emoji → Role mapping ---
         raw_map = {}
